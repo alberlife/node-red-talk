@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "beede7ec-902f-4624-93a3-cf4de1412656",
+		"name": "node-red-talk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1-Basic usage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/basic",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"basic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.2-Basic usage error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/error",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"error"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2-Basic usage post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Post working\",\r\n    \"status\": 201\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/post",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3-Basic usage query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/query",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"query"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.2-Basic usage query with error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/query?error=true",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"query"
+					],
+					"query": [
+						{
+							"key": "error",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4-Basic usage param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/param/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"param",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4.2-Basic usage param with error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/param/10",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"param",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5-Basic usage context flow",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/flow",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"flow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5.2-Basic usage context global",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/global",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"global"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6-Basic usage withRequest default",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/withRequest/other",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"withRequest",
+						"other"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6.2-Basic usage withRequest error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/withRequest/error",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"withRequest",
+						"error"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6.3-Basic usage withRequest param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/withRequest/param",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"withRequest",
+						"param"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6.4-Basic usage withRequest post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/withRequest/post",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"withRequest",
+						"post"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:1880"
+		}
+	]
+}
