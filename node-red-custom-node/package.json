@@ -1,0 +1,19 @@
+{
+	"name": "node-red-custom-node",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": ""
+	},
+	"node-red": {
+		"nodes": {
+			"exec-dir": "exec-dir.js"
+		}
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"node-red-node-test-helper": "^0.2.7"
+	}
+}
