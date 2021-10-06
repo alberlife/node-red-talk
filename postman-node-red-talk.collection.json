@@ -6,47 +6,30 @@
 	},
 	"item": [
 		{
-			"name": "1-Basic usage",
+			"name": "1-Get myfile",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/basic",
+					"raw": "{{url}}/myfile",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"basic"
+						"myfile"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "1.2-Basic usage error",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/error",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"error"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "2-Basic usage post",
+			"name": "2-Overwrite myfile",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"message\": \"Post working\",\r\n    \"status\": 201\r\n}",
+					"raw": "{\r\n    \"message\": \"File created\",\r\n    \"name\": \"myfile.json\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -54,176 +37,116 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/post",
+					"raw": "{{url}}/myfile",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"post"
+						"myfile"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "3-Basic usage query",
+			"name": "3-Delete myfile",
 			"request": {
-				"method": "GET",
+				"method": "DELETE",
 				"header": [],
-				"url": {
-					"raw": "{{url}}/query",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"query"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "3.2-Basic usage query with error",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/query?error=true",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"query"
-					],
-					"query": [
-						{
-							"key": "error",
-							"value": "true"
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/myfile",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"myfile"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "4-Basic usage param",
+			"name": "4-Batch",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Batch new message 4\",\r\n    \"order\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "{{url}}/param/2",
+					"raw": "{{url}}/batch",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"param",
-						"2"
+						"batch"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "5-Basic usage context flow",
+			"name": "4-Batch 2",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Batch new message 2\",\r\n    \"order\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "{{url}}/flow",
+					"raw": "{{url}}/batch",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"flow"
+						"batch"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "5.2-Basic usage context global",
+			"name": "4-Batch 3",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Batch new message 6\",\r\n    \"order\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "{{url}}/global",
+					"raw": "{{url}}/batch",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"global"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "6-Basic usage withRequest default",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/withRequest/other",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"withRequest",
-						"other"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "6.2-Basic usage withRequest error",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/withRequest/error",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"withRequest",
-						"error"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "6.3-Basic usage withRequest param",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/withRequest/param",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"withRequest",
-						"param"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "6.4-Basic usage withRequest post",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/withRequest/post",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"withRequest",
-						"post"
+						"batch"
 					]
 				}
 			},

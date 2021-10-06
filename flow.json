@@ -1414,12 +1414,12 @@
         "interval": 10,
         "allowEmptySequence": false,
         "topics": [],
-        "x": 110,
-        "y": 360,
+        "x": 350,
+        "y": 400,
         "wires": [
             [
                 "20e4b4fb3b8bced5",
-                "26b0e44380a93c0d"
+                "202099ad27647240"
             ]
         ]
     },
@@ -1436,8 +1436,8 @@
         "y": 300,
         "wires": [
             [
-                "159c8935edb8959f",
-                "031208cac1fba912"
+                "031208cac1fba912",
+                "7aa67010e7088251"
             ]
         ]
     },
@@ -1448,8 +1448,8 @@
         "name": "responseBatch",
         "statusCode": "",
         "headers": {},
-        "x": 1160,
-        "y": 360,
+        "x": 1620,
+        "y": 400,
         "wires": []
     },
     {
@@ -1482,8 +1482,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 150,
-        "y": 400,
+        "x": 390,
+        "y": 440,
         "wires": []
     },
     {
@@ -1506,8 +1506,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 270,
-        "y": 360,
+        "x": 730,
+        "y": 400,
         "wires": [
             [
                 "d769f4d8dcba8b15",
@@ -1528,8 +1528,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 300,
-        "y": 440,
+        "x": 760,
+        "y": 480,
         "wires": []
     },
     {
@@ -1545,8 +1545,8 @@
         "msgKeyType": "jsonata",
         "seqKey": "payload",
         "seqKeyType": "msg",
-        "x": 430,
-        "y": 360,
+        "x": 890,
+        "y": 400,
         "wires": [
             [
                 "b3fa228ba4d01ddf",
@@ -1565,8 +1565,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 590,
-        "y": 360,
+        "x": 1050,
+        "y": 400,
         "wires": [
             [
                 "cfa3463e1a06bd09",
@@ -1594,8 +1594,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 970,
-        "y": 360,
+        "x": 1430,
+        "y": 400,
         "wires": [
             [
                 "6afb4365753ee174",
@@ -1616,8 +1616,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
-        "y": 320,
+        "x": 1080,
+        "y": 360,
         "wires": []
     },
     {
@@ -1633,8 +1633,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1160,
-        "y": 420,
+        "x": 1620,
+        "y": 460,
         "wires": []
     },
     {
@@ -1670,8 +1670,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 780,
-        "y": 400,
+        "x": 1240,
+        "y": 440,
         "wires": [
             [
                 "80be44ec5e76c44d"
@@ -1945,8 +1945,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 470,
-        "y": 400,
+        "x": 930,
+        "y": 440,
         "wires": []
     },
     {
@@ -1962,8 +1962,8 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 770,
-        "y": 440,
+        "x": 1230,
+        "y": 480,
         "wires": [
             [
                 "aa6c6afbbfddc330"
@@ -1996,8 +1996,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 770,
-        "y": 480,
+        "x": 1230,
+        "y": 520,
         "wires": [
             [
                 "bad6eda52bee5ea1"
@@ -2112,5 +2112,129 @@
         "x": 500,
         "y": 140,
         "wires": []
+    },
+    {
+        "id": "7aa67010e7088251",
+        "type": "change",
+        "z": "1bff67c84ee97dc7",
+        "name": "setNumRequest",
+        "rules": [
+            {
+                "t": "set",
+                "p": "batchRequest",
+                "pt": "flow",
+                "to": "$flowContext('batchRequest') ?\t    ($flowContext('batchRequest') + 1) : 1",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 140,
+        "y": 360,
+        "wires": [
+            [
+                "5972f8c338cf6866"
+            ]
+        ]
+    },
+    {
+        "id": "202099ad27647240",
+        "type": "change",
+        "z": "1bff67c84ee97dc7",
+        "name": "resetNumRequest",
+        "rules": [
+            {
+                "t": "set",
+                "p": "batchRequest",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 400,
+        "wires": [
+            [
+                "26b0e44380a93c0d"
+            ]
+        ]
+    },
+    {
+        "id": "5972f8c338cf6866",
+        "type": "switch",
+        "z": "1bff67c84ee97dc7",
+        "name": "switchNumRequest",
+        "property": "batchRequest",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 150,
+        "y": 400,
+        "wires": [
+            [
+                "159c8935edb8959f"
+            ],
+            [
+                "c09cedefc99f8c52",
+                "159c8935edb8959f"
+            ]
+        ]
+    },
+    {
+        "id": "8193a1e42e439181",
+        "type": "http response",
+        "z": "1bff67c84ee97dc7",
+        "name": "responseAcceptedBatch",
+        "statusCode": "202",
+        "headers": {},
+        "x": 410,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "c09cedefc99f8c52",
+        "type": "change",
+        "z": "1bff67c84ee97dc7",
+        "name": "setPayload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"message\":\"Request accepted\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 540,
+        "wires": [
+            [
+                "8193a1e42e439181"
+            ]
+        ]
     }
 ]
